@@ -47,19 +47,31 @@ tail -n +2 "$OLD_HCAHPS_DETAIL" >$NEW_HCAHPS_DETAIL
 # create hdfs director
 hdfs dfs -mkdir /user/w205/hospital_compare
 
-# copy file to hdfs
-hdfs dfs -put $NEW_READMISSIONS /user/w205/hospital_compare
-hdfs dfs -put $NEW_TIMELY /user/w205/hospital_compare
-hdfs dfs -put $NEW_HOSP_INFO /user/w205/hospital_compare
-hdfs dfs -put $NEW_HCAHPS_SUMMARY /user/w205/hospital_compare
-hdfs dfs -put $NEW_MEASURE /user/w205/hospital_compare
-hdfs dfs -put $NEW_COMPLICATIONS /user/w205/hospital_compare
-hdfs dfs -put $NEW_HCAHPS_DETAIL /user/w205/hospital_compare
+#create hdfs directory for each file and copy each file to hdfs
+hdfs dfs -mkdir /user/w205/hospital_compare/readmissions_and_deaths
+hdfs dfs -put $NEW_READMISSIONS /user/w205/hospital_compare/readmissions_and_deaths
+
+hdfs dfs -mkdir /user/w205/hospital_compare/timely_and_effective_care
+hdfs dfs -put $NEW_TIMELY /user/w205/hospital_compare/timely_and_effective_care
+
+hdfs dfs -mkdir /user/w205/hospital_compare/hospital_general_info
+hdfs dfs -put $NEW_HOSP_INFO /user/w205/hospital_compare/hospital_general_info
+
+hdfs dfs -mkdir /user/w205/hospital_compare/hcahps_summary
+hdfs dfs -put $NEW_HCAHPS_SUMMARY /user/w205/hospital_compare/hcahps_summary
+
+hdfs dfs -mkdir /user/w205/hospital_compare/measure_dates
+hdfs dfs -put $NEW_MEASURE /user/w205/hospital_compare/measure_dates
+
+hdfs dfs -mkdir /user/w205/hospital_compare/complications_hospital
+hdfs dfs -put $NEW_COMPLICATIONS /user/w205/hospital_compare/complications_hospital
+
+hdfs dfs -mkdir /user/w205/hospital_compare/hcahps_detail
+hdfs dfs -put $NEW_HCAHPS_DETAIL /user/w205/hospital_compare/hcahps_detail
 
 # change directory back to original
 cd $MY_CWD
 
 # clean exit
 exit
-
 
