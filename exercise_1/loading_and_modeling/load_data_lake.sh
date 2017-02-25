@@ -22,7 +22,6 @@ OLD_READMISSIONS="Readmissions and Deaths - Hospital.csv"
 OLD_TIMELY="Timely and Effective Care - Hospital.csv"
 OLD_HOSP_INFO="Hospital General Information.csv"
 OLD_HCAHPS_SUMMARY="hvbp_hcahps_11_10_2016.csv"
-OLD_MEASURE="Measure Dates.csv"
 OLD_COMPLICATIONS="Complications - Hospital.csv"
 OLD_HCAHPS_DETAIL="HCAHPS - Hospital.csv"
 
@@ -31,7 +30,6 @@ NEW_READMISSIONS="Readmissions_and_Deaths_Hospital.csv"
 NEW_TIMELY="Timely_and_Effective_Care_Hospital.csv"
 NEW_HOSP_INFO="Hospital_General_Info.csv"
 NEW_HCAHPS_SUMMARY="HCAHPS_Hospital_Summary.csv"
-NEW_MEASURE="Measure_Dates.csv"
 NEW_COMPLICATIONS="Complications_Hospital.csv"
 NEW_HCAHPS_DETAIL="HCAHPS_Hospital_Detail.csv"
 
@@ -40,7 +38,6 @@ tail -n +2 "$OLD_READMISSIONS" >$NEW_READMISSIONS
 tail -n +2 "$OLD_TIMELY" >$NEW_TIMELY
 tail -n +2 "$OLD_HOSP_INFO" >$NEW_HOSP_INFO
 tail -n +2 "$OLD_HCAHPS_SUMMARY" >$NEW_HCAHPS_SUMMARY
-tail -n +2 "$OLD_MEASURE" >$NEW_MEASURE
 tail -n +2 "$OLD_COMPLICATIONS" >$NEW_COMPLICATIONS
 tail -n +2 "$OLD_HCAHPS_DETAIL" >$NEW_HCAHPS_DETAIL
 
@@ -59,9 +56,6 @@ hdfs dfs -put $NEW_HOSP_INFO /user/w205/hospital_compare/hospital_general_info
 
 hdfs dfs -mkdir /user/w205/hospital_compare/hcahps_summary
 hdfs dfs -put $NEW_HCAHPS_SUMMARY /user/w205/hospital_compare/hcahps_summary
-
-hdfs dfs -mkdir /user/w205/hospital_compare/measure_dates
-hdfs dfs -put $NEW_MEASURE /user/w205/hospital_compare/measure_dates
 
 hdfs dfs -mkdir /user/w205/hospital_compare/complications_hospital
 hdfs dfs -put $NEW_COMPLICATIONS /user/w205/hospital_compare/complications_hospital
