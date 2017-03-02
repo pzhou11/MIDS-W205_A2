@@ -1,6 +1,0 @@
-I used the query from the best hospitals question in order to look at the correlation between a hospital's quality of care scores and their HCAHPS scores. 
-
-The correlation coefficient between the readmission and mortality rates versus the HCAHP scores is .16. 
-The correlation coefficient between the complications versus the HCAHP scores is .14.
-
-These are small positive correlations but not very strong. The low correlation could be due to the fact that hospitals with that are highly rated by patients might see higher risk and more severe cases. One might schedule a more complication cancer procedure at the Mayo Clinic versus the local hospital for example. 
