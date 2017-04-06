@@ -14,7 +14,7 @@ tables (this will also delete previous tcount database and tweetwordcount if
 they exist):
 python create_psql_table.py
 
-5) Start storm by tweet stream by entering: sparse run
+5) Start storm for tweet stream by entering: sparse run
 
 6) After it has run for awhile press ctrl+c to interrupt the stream.
 
@@ -24,10 +24,10 @@ python finalresults.py
 the number of occurences word from the stream
 -If you enter 0 words, this script will return all words and the count of the
 occurences of each of those words alphabetically
--Anything else will give the user a corresponding error message
+-Any other input will give the user a corresponding error message
 
 python histogram.py int,int
--Enter 2 integers in the format of integer,integer
+-Enter 2 integers in the format of: integer,integer
 -This will return all words in the stream and their number of occurences if
 the number of occurences of the word is greater than or equal to the first
 integer and less than or equal to the second integer.
